@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Psykologian sanastoa</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+	<div class="navibar">
+		Navigointi:
+		<%= link_to 'Listaa', words_path %>
+		<%= link_to 'Lisää uusi', new_word_path %>
+	</div>
+
+	<%= yield %>
+
+</body>
+</html>
