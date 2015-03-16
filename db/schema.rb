@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150311141037) do
+ActiveRecord::Schema.define(version: 20150314145620) do
+
+  create_table "links", force: :cascade do |t|
+    t.string   "description"
+    t.string   "url"
+    t.integer  "word_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "words", force: :cascade do |t|
     t.string   "english"

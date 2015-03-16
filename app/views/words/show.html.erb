@@ -10,5 +10,22 @@
   <%= @word.finnish %>
 </p>
 
-<%= link_to 'Edit', edit_word_path(@word) %> |
+<% #byebug %>
+
+<% unless @word.links.empty? %>
+  <p>Sanaan liittyvät lisätietolinkit:</p>
+
+  <ul>
+  <% @word.links.each do | link | %>
+  	<li>
+			<%= link_to link.description, link.url, :target => "_blank" %>
+  	</li>
+  <% end %>
+</ul>
+<% else %>
+
+	<p>Sanaan ei löydy linkkejä.</p>
+<% end %>
+
+<%= link_to 'Muokkaa', edit_word_path(@word) %> |
 <%= link_to 'Back', words_path %>
